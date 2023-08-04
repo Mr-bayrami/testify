@@ -1,0 +1,13 @@
+html , body {
+  background-color: #1d1a25;
+}
+button:hover{
+  background-color: dodgerblue;
+  color: aqua;
+}
+
+small{
+  width: 1rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
