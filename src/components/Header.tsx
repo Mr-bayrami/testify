@@ -2,8 +2,9 @@ import React from 'react';
 import AppBar from  '@mui/material/AppBar';
 import Toolbar from  '@mui/material/Toolbar';
 import Typography from  '@mui/material/Typography';
-import {  Box, IconButton, ListItem, Menu } from '@mui/material';
+import {  Box, Button, IconButton, ListItem, Menu } from '@mui/material';
 import { Add, Apps } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 type propsType ={
     title:string;
@@ -18,11 +19,11 @@ function Header({title} : propsType) {
         {title}
       </Typography>
       <Box  >
-      <IconButton edge="end" color="inherit" aria-label="Add" sx={{ mr: 2 }}>
-      <Add />
-    </IconButton>
+      <Button variant='contained' color='info' aria-label="Add" startIcon={<Add />} sx={{ mr: 2 }}>
+      <Link  to='/new' > Add Task  </Link>
+    </Button>
     <IconButton edge='start' color="inherit" aria-label='Menu' >
-      <Apps />
+     <Link to="/Tasks"><Apps /></Link> 
     </IconButton>
     </Box></Toolbar>
   </AppBar></div>
