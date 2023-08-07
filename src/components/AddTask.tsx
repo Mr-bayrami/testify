@@ -44,7 +44,7 @@ function AddTask() {
   
   }
 
-   const OnSave =async(e.target as Element)=>{
+   const OnSave =async(e:any)=>{
     e.preventDefault();
     setOpen(true);
    AddNewTask();
