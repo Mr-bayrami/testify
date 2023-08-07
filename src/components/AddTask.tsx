@@ -2,7 +2,7 @@ import { Container } from '@mui/material'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { HTMLAttributes, HtmlHTMLAttributes, useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { Status } from 'utils/data'
 import { propsType } from './Task'
@@ -44,7 +44,8 @@ function AddTask() {
   
   }
 
-   const OnSave =async()=>{
+   const OnSave =async(e.target as Element)=>{
+    e.preventDefault();
     setOpen(true);
    AddNewTask();
    //navigate('/Tasks');
@@ -63,7 +64,7 @@ function AddTask() {
         />
         <Box display='flex' justifyContent='flex-end' gap={3} >
           <Button variant='outlined'> cancel </Button>
-          <Button variant='contained' onClick={OnSave}>save </Button>
+          <Button variant='contained' onClick={(e)=> OnSave(e)}>save </Button>
         </Box>
       </Box>
     </Container>
